@@ -32,16 +32,16 @@ class Route {
 
 	// подцепляем файл с классом модели (файла модели может и не быть)
 
-	$model_path = 'app' . DIRECTORY_SEPARATOR  . $model_name . '.php';
+	$model_path = 'app' . DIRECTORY_SEPARATOR . $model_name . '.php';
 
 	if (file_exists($model_path)) {
 	    include_once $model_path;
 	}
 
 
-	$controller_path = 'app' . DIRECTORY_SEPARATOR  . $controller_name . '.php';
+	$controller_path = 'app' . DIRECTORY_SEPARATOR . $controller_name . '.php';
 	if (file_exists($controller_path)) {
-	   include_once $controller_path;
+	    include_once $controller_path;
 	} else {
 	    self::ErrorPage404();
 	}
@@ -59,7 +59,9 @@ class Route {
     }
 
     static public function errorPage404() {
-	echo '404';
+	header('HTTP/1.1 404 Not Found');
+	header('Status: 404 Not Found');
+	include_once 'app' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . 'page404.php';
 	exit();
     }
 
