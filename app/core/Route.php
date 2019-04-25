@@ -26,9 +26,13 @@ class Route {
 
 	// добавляем префиксы
 	$controller_name = ucfirst($controller_name);
+        
 	$model_name = 'models\Model' . $controller_name;
+        
 	$controller_name = 'controllers\Controller' . $controller_name;
+        
 	$action_name = 'action_' . $action_name;
+        
 
 	// подцепляем файл с классом модели (файла модели может и не быть)
 
@@ -43,7 +47,7 @@ class Route {
 	if (file_exists($controller_path)) {
 	    include_once $controller_path;
 	} else {
-	    self::ErrorPage404();
+	    self::errorPage404();
 	}
 
 	// создаем контроллер
