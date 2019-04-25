@@ -10,5 +10,7 @@
 	
     </tbody>
 </table>
+<button id="courses" type="button">Get courses</button>
+<button id="questions-btn" type="button">Get courses</button>
 <script src="js/questions.js"></script>
 
