@@ -10,9 +10,4 @@ class ControllerMain extends Controller {
 	$this->view->render('main_index_view');
     }
 
-    public function action_create() {
-	echo 'Main controller action create'; //TODO delete
-	//TODO action
-    }
-
 }
