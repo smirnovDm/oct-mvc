@@ -1,9 +1,9 @@
-<form method="POST">
-    <input type="submit" name="add" value="+"/>
-</form>
+
+<input type="button" name="add" value="+"/>
+
 <ul>
     <?php foreach($this->tasks as $task): ?>
-    <li><?= $task['name'] ?></li>
+    <li id="<?= $task['id'] ?>"><?= $task['name'] ?> <i class="fas fa-edit" id="<?= $task['id'] ?>"></i></li>
     <?php endforeach; ?>
 </ul>
 

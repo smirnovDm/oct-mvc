@@ -30,7 +30,7 @@ document.getElementById('questions-btn').onclick = function () {
 		var questions = JSON.parse(json_text);
 		console.log(questions);
 		//TODO вывести в таблицу
-		var tbody = document.querySelector('#questions tbody')
+		var tbody = document.querySelector('#questions tbody');
 		tbody.innerHTML = '';
 		for (var i = 0; i < questions.length; i++) {
 		    var tr = '<tr>\n\

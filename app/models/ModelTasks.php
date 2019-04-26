@@ -16,5 +16,9 @@ class ModelTasks extends Model {
 	$query = "INSERT INTO `tasks` (`id`, `name`) VALUES (NULL, '$text');";
 	$result = $this->db->query($query);
     }
+    public function saveEdit($text, $text_id){
+        $query = "UPDATE `tasks` SET `name` = '$text' WHERE `tasks`.`id` = $text_id;";
+        $result = $this->db->query($query);
+    }
 
 }
