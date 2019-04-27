@@ -23,5 +23,15 @@ class ControllerApi extends Controller {
 	echo $json_text;
     }
     
+    public function action_addquestion(){
+	//TODO в идеале нужно валидировать вход. данные
+	$question  = filter_input_array(INPUT_POST);
+	$this->model->add($question);
+    }
+    
+    public function action_addquestionid(){
+	$id = filter_input_array(INPUT_POST);
+	$this->model->addid($id);
+    }
 
 }
